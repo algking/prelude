@@ -3,7 +3,7 @@
 ;; Copyright © 2011-2013 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: https://github.com/bbatsov/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
 
@@ -63,7 +63,8 @@
        ((overlayp position)
         (goto-char (overlay-start position)))
        (t
-        (goto-char position)))))
+        (goto-char position)))
+      (recenter)))
    ((listp symbol-list)
     (dolist (symbol symbol-list)
       (let (name position)
@@ -89,14 +90,17 @@
 (defun prelude-local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t))
 
-(defun prelude-add-watchwords ()
+(defun prelude-font-lock-comment-annotations ()
+  "Highlight a bunch of well known comment annotations.
+
+This functions should be added to the hooks of major modes for programming."
   (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
+   nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
           1 font-lock-warning-face t))))
 
 ;; show the name of the current function definition in the modeline
 (require 'which-func)
-(setq which-func-modes t)
+(add-to-list 'which-func-modes 'ruby-mode)
 (which-function-mode 1)
 
 ;; in Emacs 24 programming major modes generally derive from a common
@@ -117,14 +121,17 @@
   (when prelude-guru
     (guru-mode +1))
   (prelude-enable-whitespace)
-  (flycheck-mode +1)
   (prelude-local-comment-auto-fill)
-  (prelude-add-watchwords))
+  (prelude-font-lock-comment-annotations))
 
 (setq prelude-prog-mode-hook 'prelude-prog-mode-defaults)
 
 (add-hook 'prog-mode-hook (lambda ()
                             (run-hooks 'prelude-prog-mode-hook)))
+
+(if (fboundp 'global-flycheck-mode)
+    (global-flycheck-mode +1)
+  (add-hook 'prog-mode-hook 'flycheck-mode))
 
 (provide 'prelude-programming)
 ;;; prelude-programming.el ends here

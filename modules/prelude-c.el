@@ -3,7 +3,7 @@
 ;; Copyright © 2011-2013 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: https://github.com/bbatsov/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
 
@@ -36,7 +36,8 @@
 
 (defun prelude-c-mode-common-defaults ()
   (setq indent-tabs-mode t)
-  (setq c-basic-offset 4))
+  (setq c-basic-offset 4)
+  (c-set-offset 'substatement-open 0))
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
 
