@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: try1 ... of ... end
+# key: try1
+# --
+try
+$1 
+catch
+  E:R ->
+$0
+end

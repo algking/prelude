@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: protocal
+# key: pro
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+================= $0 ===================
+协议号：$1
+c >> s:
+
+s >> c:

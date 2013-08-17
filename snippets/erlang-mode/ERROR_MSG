@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ERROR_MSG
+# key: err
+# --
+?ERROR_MSG("error:~p~n reason:~p~n $1:~p~n",[E,R,$0])

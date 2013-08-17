@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: protocal
+# key: pro
+# --
+
+%%$1
+协议号:$2
+c >> s : $3
+s >> c : $4
+$0.
+     
