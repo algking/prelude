@@ -38,7 +38,7 @@
     (define-key map (kbd "C-c o") 'prelude-open-with)
     (define-key map (kbd "C-c g") 'prelude-google)
     (define-key map (kbd "C-c G") 'prelude-github)
-    (define-key map (kbd "C-c y") 'prelude-youtube)
+    ;; (define-key map (kbd "C-c y") 'prelude-youtube)
     (define-key map (kbd "C-c U") 'prelude-duckduckgo)
     ;; mimic popular IDEs binding, note that it doesn't work in a terminal session
     (define-key map [(shift return)] 'prelude-smart-open-line)
@@ -63,7 +63,7 @@
     (define-key map (kbd "C-c TAB") 'prelude-indent-rigidly-and-copy-to-clipboard)
     (define-key map (kbd "C-c I") 'prelude-find-user-init-file)
     (define-key map (kbd "C-c S") 'prelude-find-shell-init-file)
-    (define-key map (kbd "C-c i") 'prelude-goto-symbol)
+    ;; (define-key map (kbd "C-c i") 'prelude-goto-symbol)
     ;; extra prefix for projectile
     (define-key map (kbd "s-p") 'projectile-command-map)
     ;; make some use of the Super key
