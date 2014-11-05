@@ -52,7 +52,7 @@
     (define-key map (kbd "C-c f")  'prelude-recentf-ido-find-file)
     (define-key map (kbd "C-M-z") 'prelude-indent-defun)
     (define-key map (kbd "C-c u") 'prelude-view-url)
-    (define-key map (kbd "C-c e") 'prelude-eval-and-replace)
+    (define-key map (kbd "C-c C-e") 'prelude-eval-and-replace)
     (define-key map (kbd "C-c s") 'prelude-swap-windows)
     (define-key map (kbd "C-c D") 'prelude-delete-file-and-buffer)
     (define-key map (kbd "C-c d") 'prelude-duplicate-current-line-or-region)
