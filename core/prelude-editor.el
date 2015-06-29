@@ -58,7 +58,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; revert buffers automatically when underlying files are changed externally
-(global-auto-revert-mode t)
+ (global-auto-revert-mode t)
 
 ;; hippie expand is dabbrev expand on steroids
 (setq hippie-expand-try-functions-list '(try-expand-dabbrev
@@ -376,6 +376,7 @@ indent yanked text (with prefix arg don't indent)."
 
 ;; diff-hl
 (global-diff-hl-mode +1)
+;; (diff-hl-margin-mode +1)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 ;; easy-kill
