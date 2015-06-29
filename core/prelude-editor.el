@@ -1,6 +1,6 @@
 ;;; prelude-editor.el --- Emacs Prelude: enhanced core editing experience.
 ;;
-;; Copyright © 2011-2013 Bozhidar Batsov
+;; Copyright © 2011-2015 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -56,6 +56,11 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; autosave the undo-tree history
+(setq undo-tree-history-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq undo-tree-auto-save-history t)
 
 ;; revert buffers automatically when underlying files are changed externally
  (global-auto-revert-mode t)
@@ -189,6 +194,15 @@ The body of the advice is in BODY."
 (volatile-highlights-mode t)
 (diminish 'volatile-highlights-mode)
 
+;; note - this should be after volatile-highlights is required
+;; add the ability to cut the current line, without marking it
+(defadvice kill-region (before smart-cut activate compile)
+  "When called interactively with no active region, kill a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
+
 ;; tramp, for sudo access
 (require 'tramp)
 ;; keep in mind known issues with zsh - see emacs wiki
@@ -245,6 +259,12 @@ The body of the advice is in BODY."
 (setq projectile-cache-file (expand-file-name  "projectile.cache" prelude-savefile-dir))
 (projectile-global-mode t)
 
+;; avy allows us to effectively navigate to visible things
+(require 'avy)
+(setq avy-background t)
+(setq avy-style 'at-full)
+(setq avy-style 'at-full)
+
 ;; anzu-mode enhances isearch & query-replace by showing total matches and current match position
 (require 'anzu)
 (diminish 'anzu-mode)
@@ -252,12 +272,6 @@ The body of the advice is in BODY."
 
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
-
-;; shorter aliases for ack-and-a-half commands
-(defalias 'ack 'ack-and-a-half)
-(defalias 'ack-same 'ack-and-a-half-same)
-(defalias 'ack-find-file 'ack-and-a-half-find-file)
-(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;; dired - reuse current buffer by pressing 'a'
 (put 'dired-find-alternate-file 'disabled nil)
@@ -290,6 +304,7 @@ The body of the advice is in BODY."
   (interactive
    (list (not (region-active-p)))))
 
+(require 'tabify)
 (defmacro with-region-or-buffer (func)
   "When called with no active region, call FUNC on current buffer."
   `(defadvice ,func (before with-region-or-buffer activate compile)
@@ -385,6 +400,8 @@ indent yanked text (with prefix arg don't indent)."
 
 ;; operate-on-number
 (require 'operate-on-number)
+(require 'smartrep)
+
 (smartrep-define-key global-map "C-c ."
   '(("+" . apply-operation-to-number-at-point)
     ("-" . apply-operation-to-number-at-point)
@@ -397,6 +414,25 @@ indent yanked text (with prefix arg don't indent)."
     ("#" . apply-operation-to-number-at-point)
     ("%" . apply-operation-to-number-at-point)
     ("'" . operate-on-number-at-point)))
+
+(defadvice server-visit-files (before parse-numbers-in-lines (files proc &optional nowait) activate)
+  "Open file with emacsclient with cursors positioned on requested line.
+Most of console-based utilities prints filename in format
+'filename:linenumber'.  So you may wish to open filename in that format.
+Just call:
+
+  emacsclient filename:linenumber
+
+and file 'filename' will be opened and cursor set on line 'linenumber'"
+  (ad-set-arg 0
+              (mapcar (lambda (fn)
+                        (let ((name (car fn)))
+                          (if (string-match "^\\(.*?\\):\\([0-9]+\\)\\(?::\\([0-9]+\\)\\)?$" name)
+                              (cons
+                               (match-string 1 name)
+                               (cons (string-to-number (match-string 2 name))
+                                     (string-to-number (or (match-string 3 name) ""))))
+                            fn))) files)))
 
 (provide 'prelude-editor)
 
