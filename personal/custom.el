@@ -33,6 +33,7 @@
  '(company-auto-complete-chars (quote (32 95 41 46 39)))
  '(company-idle-delay 0.5)
  '(company-minimum-prefix-length 1)
+ '(company-quickhelp-delay 1)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
