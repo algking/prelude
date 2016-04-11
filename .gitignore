@@ -20,3 +20,6 @@ session*
 .cask
 tramp
 /var/pcache
+/snippets/CONTRIBUTORS.txt
+/snippets/LICENSE
+/snippets/README.md
