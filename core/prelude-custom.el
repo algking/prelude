@@ -105,4 +105,3 @@ Only modes that don't derive from `prog-mode' should be listed here."
 
 (provide 'prelude-custom)
 
-;;; prelude-custom.el ends here
