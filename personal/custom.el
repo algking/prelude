@@ -42,7 +42,7 @@
  '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" "bf7ed640479049f1d74319ed004a9821072c1d9331bc1147e01d22748c18ebdf" "93815fc47d9324a7761b56754bc46cd8b8544a60fca513e634dfa16b8c761400" "9eadf04efa3cb49960dfed1e4b9cdf4493e5c0b81a81368098dec14310853013" "1eaa502643bd2e379a91a514e69df3e262d85e7e78d6ee623aca7272d4b253c9" default)))
+    ("c4465c56ee0cac519dd6ab6249c7fd5bb2c7f7f78ba2875d28a50d3c20a59473" "6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" "bf7ed640479049f1d74319ed004a9821072c1d9331bc1147e01d22748c18ebdf" "93815fc47d9324a7761b56754bc46cd8b8544a60fca513e634dfa16b8c761400" "9eadf04efa3cb49960dfed1e4b9cdf4493e5c0b81a81368098dec14310853013" "1eaa502643bd2e379a91a514e69df3e262d85e7e78d6ee623aca7272d4b253c9" default)))
  '(diary-date-forms
    (quote
     ((month "/" day "[^/0-9]")
@@ -64,6 +64,7 @@
  '(flycheck-checkers
    (quote
     (ada-gnat asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua make perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint python-pycompile racket rpm-rpmlint rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
+ '(flycheck-css-csslint-executable "/usr/local/bin/csslint")
  '(flycheck-html-tidy-executable "/opt/local/bin/tidy")
  '(global-auto-complete-mode nil)
  '(global-auto-highlight-symbol-mode t)
@@ -82,8 +83,6 @@
    (quote
     (turn-on-haskell-indent turn-on-haskell-indentation turn-on-eldoc-mode turn-on-haskell-doc-mode company-mode)) t)
  '(haskell-stylish-on-save t)
- '(helm-full-frame t)
- '(helm-mode t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -102,6 +101,12 @@
      ("#F2804F" . 70)
      ("#F771AC" . 85)
      ("#eee8d5" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+ '(hl-fg-colors
+   (quote
+    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(ignoramus-file-basename-exact-names
    (quote
     ("$RECYCLE.BIN" ".AppleDouble" ".DS_Store" ".DocumentRevisions-V100" ".LSOverride" ".Rhistory" ".Spotlight-V100" ".TemporaryItems" ".Trashes" ".actionScriptProperties" ".apt_generated" ".build" ".buildpath" ".builds" ".bzr" ".cdv" ".classpath" ".com.apple.timemachine.donotpresent" ".com.apple.timemachine.supported" ".coverage" ".cproject" ".directory" ".dropbox" ".dropbox.cache" ".emacs.desktop" ".emacs.desktop.lock" ".eunit" ".externalToolBuilders" ".flexProperties" ".fseventsd" ".git" ".hg" ".idea" ".ido.last" ".last_cover_stats" ".lein-deps-sum" ".loadpath" ".netrwhist" ".org-id-locations" ".pc" ".project" ".projectile" ".recentf" ".redcar" ".rspec" ".sass-cache" ".scala_dependencies" ".svn" ".tox" ".wmncach.el" ".yardoc" "_MTN" "__history" "_build" "_cgo_defun.c" "_cgo_gotypes.go" "_darcs" "_obj" "_sgbak" "_site" "_test" "_testmain.go" "_yardoc" "aclocal.m4" "auto-save-list" "autom4te.cache" "bin-debug" "bin-release" "blib" "build" "Build" "Build.bat" "COMMIT_EDITMSG" "cmake_install.cmake" "CMakeCache.txt" "CMakeFiles" "cover_db" "cscope.csd" "cscope.files" "cscope.inc" "cscope.lst" "cscope.out" "cscope.out.po" "cscope.tmplist" "CVS" "Debug" "debug" "depcomp" "DerivedData" "Desktop.ini" "ehthumbs.db" "git-rebase-todo" "gwt-unitCache" "gwt_bree" "install-sh" "install_manifest.txt" "InstalledFiles" "Makefile.in" "Makefile.old" "MCVS" "META.yml" "MERGE_MSG" "minimal-session-saver-data.el" "MYMETA.yml" "nbbuild" "nbdist" "nosetests.xml" "nytprof" "nytprof.out" "perltidy.ERR" "pm_to_blib" "Profile" "profile" "RCS" "Release" "release" "SCCS" "Session.vim" "slprj" "SQUASH_MSG" "TAGS" "tags" "TestResult" "testresult" "Thumbs.db" "tmtags" "xcuserdata" "xhtml-loader.rnc" "{arch}" "~.dep" "~.dot" "~.nib" "~.plst" "test.out" "test_out" "test.output" "test_output" ".beam" "ebin")))
@@ -121,11 +126,16 @@
  '(magit-emacsclient-executable "/usr/local/bin/emacsclient")
  '(magit-use-overlays nil)
  '(malabar-groovy-java-command "/usr/bin/java")
+ '(nrepl-message-colors
+   (quote
+    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(ns-auto-hide-menu-bar t)
  '(org-agenda-diary-file "~/note/diary.org")
  '(org-agenda-files
    (quote
-    ("~/note/project.org" "~/note/learn.org" "~/note/note.org" "~/note/life.org" "~/note/task.org")))
+    ("~/note/eng.org" "~/note/project.org" "~/note/learn.org" "~/note/note.org" "~/note/life.org" "~/note/task.org")))
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-scheduled-if-done nil)
  '(org-capture-templates
    (quote
     (("l" "life schedule" entry
@@ -149,6 +159,8 @@
       "* TODO %^{Description} Added:%T %^g
   %?"))))
  '(org-directory "~/note")
+ '(org-fontify-done-headline t)
+ '(org-log-into-drawer t)
  '(org-mobile-directory "~/note")
  '(org-mobile-encryption-password "ALG*lin*123")
  '(org-modules
@@ -156,11 +168,13 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(org-todo-keywords
    (quote
-    ((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)"))))
+    ((sequence "TODO(t)" "STARTED(s)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)"))))
  '(php-boris-command
    "/Users/algking/php-workspace/petsns3/vendor/d11wtq/boris/bin/boris")
  '(php-manual-url "http://www.php.net/manual/zh/")
  '(php-mode-coding-style (quote symfony2))
+ '(pos-tip-background-color "#eee8d5")
+ '(pos-tip-foreground-color "#586e75")
  '(prelude-whitespace nil)
  '(projectile-tags-command "find . -name \"*.php\" -print | etags -")
  '(projectile-use-native-indexing nil)
@@ -173,6 +187,7 @@
     ((require-final-newline . t)
      (emacs-lisp-docstring-fill-column . 75))))
  '(scroll-bar-mode nil)
+ '(selectric-mode t)
  '(semantic-java-dependency-system-include-path
    (quote
     ("/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src")))
@@ -219,7 +234,11 @@
  '(whitespace-global-modes nil)
  '(whitespace-mode nil t)
  '(wrangler-search-paths (quote ("/home/algking/Tools/erl-workspace/mochiweb/")))
- '(yas-snippet-dirs (quote ("~/.emacs.d/myprelude/snippets/")) nil (yasnippet)))
+ '(xterm-color-names
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
+ '(xterm-color-names-bright
+   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"])
+ '(yas-snippet-dirs (quote ("~/.emacs.d/myprelude/snippets/"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -232,10 +251,12 @@
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow1"))))
  '(fringe ((t nil)))
- '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.5))))
- '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.4))))
- '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.4))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 2.0))))
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.8 :foundry "18" :family "YaHei Consolas Hybrid"))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.5))))
  '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.2))))
  '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.0))))
- '(org-headline-done ((t (:foreground "#859900" :strike-through t))))
+ '(org-agenda-done ((t (:foreground "dark gray" :strike-through t :slant italic))))
+ '(org-done ((t (:foreground "dark gray" :strike-through t :weight bold))))
+ '(org-headline-done ((t (:foreground "dark gray" :strike-through t))))
  '(term ((t (:inherit default)))))
