@@ -86,5 +86,9 @@
 ;; (require 'beacon)
 ;; (beacon-mode +1)
 
+;; show available keybindings after you start typing
+(require 'which-key)
+(which-key-mode +1)
+
 (provide 'prelude-ui)
 
