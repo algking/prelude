@@ -68,7 +68,7 @@
  '(flycheck-html-tidy-executable "/opt/local/bin/tidy")
  '(global-auto-complete-mode nil)
  '(global-auto-highlight-symbol-mode t)
- '(global-flycheck-mode t nil (flycheck))
+ '(global-flycheck-mode t)
  '(global-hl-line-sticky-flag nil)
  '(global-semantic-mru-bookmark-mode nil)
  '(grep-command "grep -r --exclude-dir=\\.svn -nH -e ")
@@ -81,7 +81,7 @@
  '(grep-find-template "find . <X> -type f <F> -exec grep <C> -nH -e <R> {} +")
  '(haskell-mode-hook
    (quote
-    (turn-on-haskell-indent turn-on-haskell-indentation turn-on-eldoc-mode turn-on-haskell-doc-mode company-mode)) t)
+    (turn-on-haskell-indent turn-on-haskell-indentation turn-on-eldoc-mode turn-on-haskell-doc-mode company-mode)))
  '(haskell-stylish-on-save t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -169,6 +169,9 @@
  '(org-todo-keywords
    (quote
     ((sequence "TODO(t)" "STARTED(s)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)"))))
+ '(package-selected-packages
+   (quote
+    (web-beautify feature-mode markdown-mode tagedit find-file-in-project zop-to-char zenburn-theme yaml-mode yafolding xcscope which-key web-mode web volatile-highlights vkill textile-mode tern-auto-complete swiper smex smartrep smartparens smart-mode-line-powerline-theme session recompile-on-save readline-complete rainbow-mode rainbow-delimiters php-refactor-mode php-extras ov outline-magic org-alert operate-on-number nlinum multi-term move-text magit less-css-mode key-chord json-mode js2-refactor isearch+ inf-ruby imenu-anywhere ignoramus ido-ubiquitous hydra helm-projectile guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine ghci-completion ghc gh-md ggtags geiser geben flycheck flx-ido expand-region exec-path-from-shell evil etags-select erlang elisp-slime-nav edit-server easy-kill dockerfile-mode discover-my-major dired+ diminish diff-hl deft dash-at-point csv-mode company-web company-tern company-quickhelp company-c-headers company-anaconda cider browse-kill-ring beacon auto-highlight-symbol auto-complete-clang auto-complete-c-headers auctex anzu ack-and-a-half ace-window ace-jump-mode ace-jump-buffer ac-js2 ac-html ac-emmet)))
  '(php-boris-command
    "/Users/algking/php-workspace/petsns3/vendor/d11wtq/boris/bin/boris")
  '(php-manual-url "http://www.php.net/manual/zh/")
