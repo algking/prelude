@@ -42,7 +42,7 @@
  '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("c4465c56ee0cac519dd6ab6249c7fd5bb2c7f7f78ba2875d28a50d3c20a59473" "6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" "bf7ed640479049f1d74319ed004a9821072c1d9331bc1147e01d22748c18ebdf" "93815fc47d9324a7761b56754bc46cd8b8544a60fca513e634dfa16b8c761400" "9eadf04efa3cb49960dfed1e4b9cdf4493e5c0b81a81368098dec14310853013" "1eaa502643bd2e379a91a514e69df3e262d85e7e78d6ee623aca7272d4b253c9" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "c4465c56ee0cac519dd6ab6249c7fd5bb2c7f7f78ba2875d28a50d3c20a59473" "6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" "bf7ed640479049f1d74319ed004a9821072c1d9331bc1147e01d22748c18ebdf" "93815fc47d9324a7761b56754bc46cd8b8544a60fca513e634dfa16b8c761400" "9eadf04efa3cb49960dfed1e4b9cdf4493e5c0b81a81368098dec14310853013" "1eaa502643bd2e379a91a514e69df3e262d85e7e78d6ee623aca7272d4b253c9" default)))
  '(diary-date-forms
    (quote
     ((month "/" day "[^/0-9]")
@@ -66,6 +66,7 @@
     (ada-gnat asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua make perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint python-pycompile racket rpm-rpmlint rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
  '(flycheck-css-csslint-executable "/usr/local/bin/csslint")
  '(flycheck-html-tidy-executable "/opt/local/bin/tidy")
+ '(flycheck-python-pycompile-executable nil)
  '(global-auto-complete-mode nil)
  '(global-auto-highlight-symbol-mode t)
  '(global-flycheck-mode t)
@@ -114,6 +115,7 @@
    (quote
     (("!\\[.*\\](/public/img/\\(.*\\.\\(GIF\\|JP\\(?:E?G\\)\\|P\\(?:BM\\|GM\\|N[GM]\\|PM\\)\\|SVG\\|TIFF?\\|X\\(?:[BP]M\\)\\|gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|gm\\|n[gm]\\|pm\\)\\|svg\\|tiff?\\|x\\(?:[bp]m\\)\\)\\))" . 1)
      ("\\(`?file://\\|\\[\\[\\|<\\|`\\)?\\([-+./_0-9a-zA-Z]+\\.\\(GIF\\|JP\\(?:E?G\\)\\|P\\(?:BM\\|GM\\|N[GM]\\|PM\\)\\|SVG\\|TIFF?\\|X\\(?:[BP]M\\)\\|gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|gm\\|n[gm]\\|pm\\)\\|svg\\|tiff?\\|x\\(?:[bp]m\\)\\)\\)\\(\\]\\]\\|>\\|'\\)?" . 2))))
+ '(imenu-auto-rescan nil)
  '(jde-jdk-registry
    (quote
     (("1.7.0" . "/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"))))
@@ -171,16 +173,22 @@
     ((sequence "TODO(t)" "STARTED(s)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)"))))
  '(package-selected-packages
    (quote
-    (web-beautify feature-mode markdown-mode tagedit find-file-in-project zop-to-char zenburn-theme yaml-mode yafolding xcscope which-key web-mode web volatile-highlights vkill textile-mode tern-auto-complete swiper smex smartrep smartparens smart-mode-line-powerline-theme session recompile-on-save readline-complete rainbow-mode rainbow-delimiters php-refactor-mode php-extras ov outline-magic org-alert operate-on-number nlinum multi-term move-text magit less-css-mode key-chord json-mode js2-refactor isearch+ inf-ruby imenu-anywhere ignoramus ido-ubiquitous hydra helm-projectile guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine ghci-completion ghc gh-md ggtags geiser geben flycheck flx-ido expand-region exec-path-from-shell evil etags-select erlang elisp-slime-nav edit-server easy-kill dockerfile-mode discover-my-major dired+ diminish diff-hl deft dash-at-point csv-mode company-web company-tern company-quickhelp company-c-headers company-anaconda cider browse-kill-ring beacon auto-highlight-symbol auto-complete-clang auto-complete-c-headers auctex anzu ack-and-a-half ace-window ace-jump-mode ace-jump-buffer ac-js2 ac-html ac-emmet)))
+    (ac-html-bootstrap scss-mode phpcbf counsel company-lsp lsp-php spacemacs-theme php-refactor-mode web-mode cider ein pyenv-mode-auto pyenv-mode markdown-mode origami web-beautify feature-mode tagedit find-file-in-project zop-to-char zenburn-theme yaml-mode yafolding xcscope which-key web volatile-highlights vkill textile-mode tern-auto-complete smex smartrep smart-mode-line-powerline-theme session recompile-on-save readline-complete rainbow-mode rainbow-delimiters php-extras ov outline-magic org-alert operate-on-number nlinum multi-term move-text magit less-css-mode key-chord json-mode js2-refactor isearch+ imenu-anywhere ignoramus ido-ubiquitous helm-projectile guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine ghci-completion ghc gh-md geben flycheck flx-ido expand-region exec-path-from-shell evil etags-select elisp-slime-nav edit-server easy-kill dockerfile-mode discover-my-major dired+ diminish diff-hl deft dash-at-point csv-mode company-web company-tern company-quickhelp company-c-headers company-anaconda browse-kill-ring beacon auto-highlight-symbol auto-complete-clang auto-complete-c-headers auctex anzu ack-and-a-half ace-window ace-jump-mode ace-jump-buffer ac-js2 ac-html ac-emmet)))
  '(php-boris-command
    "/Users/algking/php-workspace/petsns3/vendor/d11wtq/boris/bin/boris")
  '(php-manual-url "http://www.php.net/manual/zh/")
  '(php-mode-coding-style (quote symfony2))
+ '(phpcbf-executable "~/.composer/vendor/bin/phpcbf")
+ '(phpcbf-standard "zend")
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(prelude-whitespace nil)
  '(projectile-tags-command "find . -name \"*.php\" -print | etags -")
  '(projectile-use-native-indexing nil)
+ '(python-shell-extra-pythonpaths
+   (quote
+    ("/Users/algking/py-workspace/env/lib/python3.6/site-packages" "/usr/local/lib/python3.6/site-packages")))
+ '(python-shell-interpreter "ipython")
  '(quack-default-program "mit-scheme")
  '(quack-programs
    (quote
@@ -201,7 +209,7 @@
  '(session-use-package t nil (session))
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(smartparens-global-mode t)
+ '(smartparens-global-mode 0)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(tab-width 4)
  '(tags-table-list (quote ("/Users/algking/php-workspace/petsns1/TAGS")))
@@ -251,9 +259,10 @@
  '(ac-clang-candidate-face ((t (:background "ivory1" :foreground "dodger blue"))))
  '(ac-clang-selection-face ((t (:background "DeepSkyBlue1" :foreground "white"))))
  '(flycheck-error ((t (:underline "red"))))
- '(flymake-errline ((((class color)) (:underline "red"))))
- '(flymake-warnline ((((class color)) (:underline "yellow1"))))
+ '(flymake-errline ((((class color)) (:underline "red"))) t)
+ '(flymake-warnline ((((class color)) (:underline "yellow1"))) t)
  '(fringe ((t nil)))
+ '(ivy-current-match ((t (:background "PaleGreen3" :weight bold))))
  '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 2.0))))
  '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.8 :foundry "18" :family "YaHei Consolas Hybrid"))))
  '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.5))))
@@ -262,4 +271,5 @@
  '(org-agenda-done ((t (:foreground "dark gray" :strike-through t :slant italic))))
  '(org-done ((t (:foreground "dark gray" :strike-through t :weight bold))))
  '(org-headline-done ((t (:foreground "dark gray" :strike-through t))))
- '(term ((t (:inherit default)))))
+ '(term ((t (:inherit default))))
+ '(viper-minibuffer-insert ((t (:foreground "Black")))))
