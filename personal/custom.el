@@ -115,7 +115,7 @@
    (quote
     (("!\\[.*\\](/public/img/\\(.*\\.\\(GIF\\|JP\\(?:E?G\\)\\|P\\(?:BM\\|GM\\|N[GM]\\|PM\\)\\|SVG\\|TIFF?\\|X\\(?:[BP]M\\)\\|gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|gm\\|n[gm]\\|pm\\)\\|svg\\|tiff?\\|x\\(?:[bp]m\\)\\)\\))" . 1)
      ("\\(`?file://\\|\\[\\[\\|<\\|`\\)?\\([-+./_0-9a-zA-Z]+\\.\\(GIF\\|JP\\(?:E?G\\)\\|P\\(?:BM\\|GM\\|N[GM]\\|PM\\)\\|SVG\\|TIFF?\\|X\\(?:[BP]M\\)\\|gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|gm\\|n[gm]\\|pm\\)\\|svg\\|tiff?\\|x\\(?:[bp]m\\)\\)\\)\\(\\]\\]\\|>\\|'\\)?" . 2))))
- '(imenu-auto-rescan nil)
+ '(imenu-auto-rescan t)
  '(jde-jdk-registry
    (quote
     (("1.7.0" . "/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"))))
@@ -123,6 +123,11 @@
    (quote
     ("/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/src")))
  '(kept-new-versions 5)
+ '(lsp-php-language-server-command
+   (quote
+    ("/usr/local/Cellar/php71/7.1.16/bin/php" "/Users/algking/.emacs.d/php-language-server/vendor/bin/php-language-server.php")))
+ '(lsp-php-show-file-parse-notifications nil)
+ '(lsp-project-whitelist nil)
  '(mac-option-modifier (quote super))
  '(magit-diff-use-overlays nil)
  '(magit-emacsclient-executable "/usr/local/bin/emacsclient")
@@ -173,13 +178,13 @@
     ((sequence "TODO(t)" "STARTED(s)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)"))))
  '(package-selected-packages
    (quote
-    (ac-html-bootstrap scss-mode phpcbf counsel company-lsp lsp-php spacemacs-theme php-refactor-mode web-mode cider ein pyenv-mode-auto pyenv-mode markdown-mode origami web-beautify feature-mode tagedit find-file-in-project zop-to-char zenburn-theme yaml-mode yafolding xcscope which-key web volatile-highlights vkill textile-mode tern-auto-complete smex smartrep smart-mode-line-powerline-theme session recompile-on-save readline-complete rainbow-mode rainbow-delimiters php-extras ov outline-magic org-alert operate-on-number nlinum multi-term move-text magit less-css-mode key-chord json-mode js2-refactor isearch+ imenu-anywhere ignoramus ido-ubiquitous helm-projectile guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine ghci-completion ghc gh-md geben flycheck flx-ido expand-region exec-path-from-shell evil etags-select elisp-slime-nav edit-server easy-kill dockerfile-mode discover-my-major dired+ diminish diff-hl deft dash-at-point csv-mode company-web company-tern company-quickhelp company-c-headers company-anaconda browse-kill-ring beacon auto-highlight-symbol auto-complete-clang auto-complete-c-headers auctex anzu ack-and-a-half ace-window ace-jump-mode ace-jump-buffer ac-js2 ac-html ac-emmet)))
+    (company-php lsp-mode lsp-ui ac-html-bootstrap scss-mode phpcbf counsel company-lsp lsp-php spacemacs-theme php-refactor-mode web-mode cider ein pyenv-mode-auto pyenv-mode markdown-mode origami web-beautify feature-mode tagedit find-file-in-project zop-to-char zenburn-theme yaml-mode yafolding xcscope which-key web volatile-highlights vkill textile-mode tern-auto-complete smex smartrep smart-mode-line-powerline-theme session recompile-on-save readline-complete rainbow-mode rainbow-delimiters php-extras ov outline-magic org-alert operate-on-number nlinum multi-term move-text magit less-css-mode key-chord json-mode js2-refactor isearch+ imenu-anywhere ignoramus ido-ubiquitous helm-projectile guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine ghci-completion ghc gh-md geben flycheck flx-ido expand-region exec-path-from-shell evil etags-select elisp-slime-nav edit-server easy-kill dockerfile-mode discover-my-major dired+ diminish diff-hl deft dash-at-point csv-mode company-web company-tern company-quickhelp company-c-headers company-anaconda browse-kill-ring beacon auto-highlight-symbol auto-complete-clang auto-complete-c-headers auctex anzu ack-and-a-half ace-window ace-jump-mode ace-jump-buffer ac-js2 ac-html ac-emmet)))
  '(php-boris-command
    "/Users/algking/php-workspace/petsns3/vendor/d11wtq/boris/bin/boris")
  '(php-manual-url "http://www.php.net/manual/zh/")
  '(php-mode-coding-style (quote symfony2))
  '(phpcbf-executable "~/.composer/vendor/bin/phpcbf")
- '(phpcbf-standard "zend")
+ '(phpcbf-standard "PSR2")
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(prelude-whitespace nil)
@@ -212,7 +217,7 @@
  '(smartparens-global-mode 0)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(tab-width 4)
- '(tags-table-list (quote ("/Users/algking/php-workspace/petsns1/TAGS")))
+ '(tags-table-list nil)
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
  '(tool-bar-mode nil)
@@ -249,7 +254,9 @@
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"])
- '(yas-snippet-dirs (quote ("~/.emacs.d/myprelude/snippets/"))))
+ '(yas-snippet-dirs
+   (quote
+    ("~/.emacs.d/myprelude/yasnippet-snippets/snippets/"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
