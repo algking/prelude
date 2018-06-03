@@ -1,3 +1,6 @@
 [submodule "yasnippet-php-mode"]
 	path = yasnippet-php-mode
 	url = https://github.com/barendt/yasnippet-php-mode.git
+[submodule "yasnippet-snippets"]
+	path = yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
