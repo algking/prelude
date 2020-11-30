@@ -41,7 +41,7 @@
     (add-to-list 'package-archives
                  '("melpa" . "http://melpa.org/packages/") t)
   (add-to-list 'package-archives
-               '("melpa" . "http://melpa.org/packages/") t))
+               '("melpa" . "http://elpa.emacs-china.org/melpa/") t))
 
 ;; load the pinned packages
 (let ((prelude-pinned-packages-file (expand-file-name "prelude-pinned-packages.el" prelude-dir)))
@@ -75,7 +75,7 @@
     grizzl
     guru-mode
     hl-todo
-    imenu-anywhere
+    ;; imenu-anywhere
     projectile
     magit
     move-text
